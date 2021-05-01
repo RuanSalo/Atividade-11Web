@@ -9,14 +9,14 @@ module.exports = (req, res) => {
 	let status;
 
 	for (const conta of contas) {
-		if (conta.email === email && conta.senha === senha) {
+		if (email && senha && conta.email === email && conta.senha === senha) {
 			status = 302;
 			html = template("Login aceito", `Seja bem vindo ${conta.nome}`);
 		} else {
 			status = 401;
 			html = template(
 				"Login não aceito",
-				"Houve algum erro quanto ao seu login,por favor verifique se os dados foram corretamente informados"
+				"<p>Houve algum erro quanto ao seu login,por favor verifique se os dados foram corretamente informados</p>"
 			);
 		}
 	}

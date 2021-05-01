@@ -12,10 +12,10 @@ module.exports = (req, res) => {
 	if (nome && email && senha && nome !== "" && email !== "" && senha !== "") {
 		contas.push(login);
 		status = 201;
-		html = template("Cadastrado com sucesso!", `Obrigado por se cadastrar ${nome}!`);
+		html = template("Cadastrado com sucesso!", `<p>Obrigado por se cadastrar ${nome}!</p>`);
 	} else {
 		status = 412;
-		html = template("Falha no cadastro", "Falta de informações");
+		html = template("Falha no cadastro", `<p>Falta de informações</p>`);
 	}
 	res.status(status).send(html);
 	module.exports = contas;
