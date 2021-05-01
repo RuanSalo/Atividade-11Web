@@ -18,4 +18,5 @@ module.exports = (req, res) => {
 		html = template("Falha no cadastro", "Falta de informações");
 	}
 	res.status(status).send(html);
+	module.exports = contas;
 };
