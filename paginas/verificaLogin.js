@@ -13,7 +13,7 @@ module.exports = (req, res) => {
 			status = 302;
 			html = template("Login aceito", `Seja bem vindo ${conta.nome}`);
 		} else {
-			status = 401;
+			status = 404;
 			html = template(
 				"Login não aceito",
 				"<p>Houve algum erro quanto ao seu login,por favor verifique se os dados foram corretamente informados</p>"
